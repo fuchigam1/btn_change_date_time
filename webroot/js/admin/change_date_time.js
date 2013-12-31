@@ -1,12 +1,15 @@
 /**
- * ChangeDateTime Script
+ * [Script] BtnChangeDateTime
+ *
+ * @link			http://www.materializing.net/
+ * @author			arata
+ * @license			MIT
  */
 $(function () {
-		
 	$('#BoxChangeNowDateTime').insertAfter('#BlogPostPostsDateTime');
-	
 	$('#BtnNowDateTime').click(function() {
 		btnChangeDateTimeValueChengeHandler();
+		return false;
 	});
 });
 
