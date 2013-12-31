@@ -1,12 +1,17 @@
 /**
- * ChangeDateTime Script
+ * [Script] btn_change_date_time
+ *
+ * @copyright		Copyright 2013, materializing.
+ * @link			http://www.materializing.net/
+ * @author			arata
+ * @package			btn_change_date_time.views
+ * @license			MIT
  */
-$(function () {
-		
+$(function () {		
 	$('#BoxChangeNowDateTime').insertAfter('#BlogPostPostsDateTime');
-	
 	$('#BtnNowDateTime').click(function() {
 		btnChangeDateTimeValueChengeHandler();
+		return false;
 	});
 });
 
