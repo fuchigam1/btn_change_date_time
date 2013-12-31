@@ -1,35 +1,35 @@
 <?php
 /**
- * [HookHelper] btn_change_date_time
+ * [HelperEventListener] BtnChangeDateTime
  *
- * @copyright		Copyright , materializing.
  * @link			http://www.materializing.net/
  * @author			arata
- * @package			btn_change_date_time.views
  * @license			MIT
  */
-class BtnChangeDateTimeHookHelper extends AppHelper {
+class BtnChangeDateTimeHelperEventListener extends BcHelperEventListener {
 /**
- * 登録フック
+ * 登録イベント
  *
  * @var array
- * @access public
  */
-	var $registerHooks = array('afterFormInput');
+	public $events = array('Form.afterInput');
+	
 /**
  * ビュー
  * 
  * @var View 
  */
-	var $View = null;
+	public $View = null;
+	
 /**
  * Construct 
  * 
  */
-	function __construct() {
+	public function __construct() {
 		parent::__construct();
 		$this->View = ClassRegistry::getObject('view');
 	}
+	
 /**
  * afterFormInput
  * 
@@ -38,7 +38,7 @@ class BtnChangeDateTimeHookHelper extends AppHelper {
  * @param string $out
  * @return string 
  */
-	function afterFormInput($form, $fieldName, $out) {
+	public function afterFormInput($form, $fieldName, $out) {
 		
 		// ブログ記事編集画面の作成者入力欄の下にボタンを表示する
 		if($form->params['controller'] == 'blog_posts'){
